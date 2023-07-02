@@ -26,17 +26,17 @@ const NavBar = () => {
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li onClick={ () => handleClick("ALEMANIA")} class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">ALEMANIA</a>
-              </li>
-              <li onClick={ () => handleClick("BRASIL")} class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">BRASIL</a>
-              </li>
-              <li onClick={ () => handleClick("ARGENTINA")} class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">ARGENTINA</a>
+              <li onClick={ () => handleClick("GRECIA")} class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">GRECIA</a>
               </li>
               <li onClick={ () => handleClick("TAILANDIA")} class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">TAILANDIA</a>
+              </li>
+              <li onClick={ () => handleClick("MEXICO")} class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">MEXICO</a>
+              </li>
+              <li onClick={ () => handleClick("ESPAÑA")} class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">ESPAÑA</a>
               </li>
             </ul>
           </div>

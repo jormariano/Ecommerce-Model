@@ -18,8 +18,7 @@ const ItemCount = ({ stock, inicial }) => {
   const [color, setColor] = useState("white");
 
   useEffect(() => {
-    // lo ejecuta y muestra un nuevo titulo, cada vez que cambia el valor de contador
-    document.title = `Contador: ${contador}`
+    // lo ejecuta y cambia el color del contador
     if (contador > 6) {
       setColor("red");
     } else {
@@ -50,7 +49,7 @@ const ItemCount = ({ stock, inicial }) => {
         <button type="button" class="btn btn-primary btn-sm" onClick={decrementar}> - </button>
         <strong> {contador} </strong>
         <button type="button" class="btn btn-primary btn-sm" onClick={incrementar}> + </button>
-        <button type="button" class="btn btn-success" onClick={agregarCarrito} style={{color: color }} >Agregar al Carrito</button>
+        <button type="button" class="btn btn-success" onClick={agregarCarrito} style={{ color: color }} >Agregar al Carrito</button>
       </div>
     </>
   )
