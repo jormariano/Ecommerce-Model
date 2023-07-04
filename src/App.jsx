@@ -9,6 +9,7 @@ import './App.css'
 
 import ItemCount from './componentes/ItemCount/ItemCount'
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer'
 import NavBar from './componentes/NavBar/NavBar'
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
     <>
       <NavBar />
       <div className='estiloPrincipal'>
+        <ItemDetailContainer />
         <ItemListContainer title={"PRODUCCIÓN DE FOTOS"} />
         <ItemCount className='contadorCarrito' stock={15} inicial={1} />
       </div>

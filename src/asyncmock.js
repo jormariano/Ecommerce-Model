@@ -8,9 +8,20 @@ const misProductos = [
 ]
 
 export const getProductos = () => {
-    return new Promise( (resolve) => {
-        setTimeout( () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
             resolve(misProductos);
+        }, 2000)
+    })
+}
+
+// Funcion igual a la anterior, pero que retorna un solo item
+
+export const getUnProducto = (id) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const producto = misProductos.find(prod => prod.id === id);
+            resolve(producto)
         }, 2000)
     })
 }
