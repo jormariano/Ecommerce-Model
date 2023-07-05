@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 const Item = ({ id, nombre, precio, img }) => {
     return (
@@ -9,7 +10,7 @@ const Item = ({ id, nombre, precio, img }) => {
                             <h5 class="card-title">Nombre: {nombre}</h5>
                             <p class="card-text">Precio: {precio}</p>
                             <p class="card-text">Id: {id}</p>
-                            <button>Ver detalles</button>
+                            <Link to={`/item/${id}`}>Ver detalles</Link>
                         </div>
                     </div>
                 </div>
@@ -20,7 +21,7 @@ const Item = ({ id, nombre, precio, img }) => {
                             <h5 class="card-title">Nombre: {nombre}</h5>
                             <p class="card-text">Precio: {precio}</p>
                             <p class="card-text">Id: {id}</p>
-                            <button>Ver detalles</button>
+                            <Link to={`/item/${id}`}>Ver detalles</Link>
                         </div>
                     </div>
                 </div>
@@ -31,7 +32,7 @@ const Item = ({ id, nombre, precio, img }) => {
                             <h5 class="card-title">Nombre: {nombre}</h5>
                             <p class="card-text">Precio: {precio}</p>
                             <p class="card-text">Id: {id}</p>
-                            <button>Ver detalles</button>
+                            <Link to={`/item/${id}`}>Ver detalles</Link>
                         </div>
                     </div>
                 </div>
@@ -42,7 +43,7 @@ const Item = ({ id, nombre, precio, img }) => {
                             <h5 class="card-title">Nombre: {nombre}</h5>
                             <p class="card-text">Precio: {precio}</p>
                             <p class="card-text">Id: {id}</p>
-                            <button>Ver detalles</button>
+                            <Link to={`/item/${id}`}>Ver detalles</Link>
                         </div>
                     </div>
                 </div>

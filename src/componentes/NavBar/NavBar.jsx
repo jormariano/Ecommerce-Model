@@ -1,6 +1,11 @@
+// Para usar Bootstrap hay que transformar Link o Navlink con la propiedad as. Ej: 
+// <Nav.Link as={Link} to="/tuCategoria">Nombre Categoria</Nav.Link>
+
 import { useState, useEffect } from 'react'
+import {Link, NavLink} from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
+
 
 const NavBar = () => {
 
@@ -8,7 +13,7 @@ const NavBar = () => {
 
   // Pasar dos parametros (), el primero es una funcion de callback y el segundo un array de dependencias
   useEffect(() => {
-    document.title = `Categoria: ${categoria}`;
+    document.title = `${categoria}`;
   }, [categoria]);
 
   // Funcion manejadora Handle
@@ -20,23 +25,23 @@ const NavBar = () => {
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a onClick={ () => handleClick("PAISES")} class="navbar-brand" href="#">PAISES: </a>
+          <Link to="/" onClick={ () => handleClick("HOME")} class="navbar-brand">HOME</Link>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li onClick={ () => handleClick("GRECIA")} class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">GRECIA</a>
+                <NavLink to="/categoria/1" class="nav-link active" aria-current="page">GRECIA</NavLink>
               </li>
               <li onClick={ () => handleClick("TAILANDIA")} class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">TAILANDIA</a>
+                <NavLink to="/categoria/2" class="nav-link active" aria-current="page">TAILANDIA</NavLink>
               </li>
               <li onClick={ () => handleClick("MEXICO")} class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">MEXICO</a>
+                <NavLink to="/categoria/3" class="nav-link active" aria-current="page">MEXICO</NavLink>
               </li>
               <li onClick={ () => handleClick("ESPAÑA")} class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">ESPAÑA</a>
+                <NavLink to="/categoria/4" class="nav-link active" aria-current="page">ESPAÑA</NavLink>
               </li>
             </ul>
           </div>
