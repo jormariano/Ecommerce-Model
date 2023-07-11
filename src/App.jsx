@@ -6,7 +6,8 @@
 
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import ItemCount from './componentes/ItemCount/ItemCount'
+// import ItemCount from './componentes/ItemCount/ItemCount'
+// <Route path='/ItemCount' element={<ItemCount className='contadorCarrito' stock={15} inicial={1} />} />
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer'
 import NavBar from './componentes/NavBar/NavBar'
@@ -23,7 +24,6 @@ const App = () => {
             <Route path='/' element={<ItemListContainer title={"PRODUCCIÓN DE FOTOS"}/> }/>
             <Route path='/categoria/:idCategoria' element={<ItemListContainer title={"PRODUCCIÓN DE FOTOS"}/> } />
             <Route path='/item/:idItem' element={<ItemDetailContainer />} />
-            <Route path='/ItemCount' element={<ItemCount className='contadorCarrito' stock={15} inicial={1} />} />
             <Route path="*" element={<h2>Link inexistente, vuelva a intentarlo</h2>}  />
           </Routes>
       </BrowserRouter>
