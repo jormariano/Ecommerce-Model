@@ -1,10 +1,10 @@
 // Simulamos una base de datos
 
 const misProductos = [
-    { id: "1", nombre: "Grecia ", precio: 50, img: "../img/grecia-1.jpg", idCat: "1" },
-    { id: "2", nombre: "Tailandia ", precio: 50, img: "../img/tailandia-1.jpg", idCat: "2" },
-    { id: "3", nombre: "Mexico ", precio: 50, img: "../img/mexico-1.jpg", idCat: "3" },
-    { id: "4", nombre: "España ", precio: 50, img: "../img/espania-1.jpg", idCat: "4" },
+    { id: "1", nombre: "Grecia ", precio: 50, stock: 10, img: "../img/grecia-1.jpg", idCat: "1" },
+    { id: "2", nombre: "Tailandia ", precio: 50, stock: 5, img: "../img/tailandia-1.jpg", idCat: "2" },
+    { id: "3", nombre: "Mexico ", precio: 50, stock: 10, img: "../img/mexico-1.jpg", idCat: "3" },
+    { id: "4", nombre: "España ", precio: 50, stock: 5, img: "../img/espania-1.jpg", idCat: "4" },
 ]
 
 export const getProductos = () => {

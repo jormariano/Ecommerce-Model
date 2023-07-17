@@ -2,7 +2,7 @@ import './ItemCount.css'
 import { useState, useEffect } from "react"
 
 
-const ItemCount = ({ stock, inicial }) => {
+const ItemCount = ({ inicial, stock, funcionAgregar }) => {
   const [contador, setContador] = useState(inicial);
 
   const [color, setColor] = useState("white");
@@ -16,20 +16,16 @@ const ItemCount = ({ stock, inicial }) => {
     }
   }, [contador])
 
-  const decrementar = () => {
-    if (contador > inicial) {
-      setContador(contador - 1);
-    }
-  }
-
   const incrementar = () => {
     if (contador < stock) {
       setContador(contador + 1);
     }
   }
 
-  const agregarCarrito = () => {
-    console.log(`Agregado ${contador} items`)
+  const decrementar = () => {
+    if (contador > inicial) {
+      setContador(contador - 1);
+    }
   }
 
   return (
@@ -39,8 +35,8 @@ const ItemCount = ({ stock, inicial }) => {
         <button type="button" class="btn btn-primary btn-sm" onClick={decrementar}> - </button>
         <strong> {contador} </strong>
         <button type="button" class="btn btn-primary btn-sm" onClick={incrementar}> + </button>
-        <button type="button" class="btn btn-success" onClick={agregarCarrito} style={{ color: color }} >Agregar al Carrito</button>
       </div>
+        <button type="button" class="btn btn-success" onClick={() => funcionAgregar(contador)} style={{ color: color }} >Agregar al Carrito</button>
     </>
   )
 }
