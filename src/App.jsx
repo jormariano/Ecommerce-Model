@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer'
 import NavBar from './componentes/NavBar/NavBar'
+import { CarritoProvider } from './context/CarritoContext'
 
 const App = () => {
   // Aca se escribe la parte logica. La funcion flecha sirve para renderizar la App en el navegador.
@@ -19,13 +20,15 @@ const App = () => {
     // En el return vamos a retornar la interfaz del usuario.
     <>
       <BrowserRouter>
-        <NavBar />
+        <CarritoProvider>
+          <NavBar />
           <Routes>
-            <Route path='/' element={<ItemListContainer title={"PRODUCCIÓN DE FOTOS"}/> }/>
-            <Route path='/categoria/:idCategoria' element={<ItemListContainer title={"PRODUCCIÓN DE FOTOS"}/> } />
+            <Route path='/' element={<ItemListContainer title={"PRODUCCIÓN DE FOTOS"} />} />
+            <Route path='/categoria/:idCategoria' element={<ItemListContainer title={"PRODUCCIÓN DE FOTOS"} />} />
             <Route path='/item/:idItem' element={<ItemDetailContainer />} />
-            <Route path="*" element={<h2>Link inexistente, vuelva a intentarlo</h2>}  />
+            <Route path="*" element={<h2>Link inexistente, vuelva a intentarlo</h2>} />
           </Routes>
+        </CarritoProvider>
       </BrowserRouter>
     </>
   )
