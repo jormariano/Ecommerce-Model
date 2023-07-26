@@ -1,16 +1,16 @@
 // Asegurarme de estar en mi-tienda y al crear con Vite, en la Terminal se ejecuta con: npm run dev
-// <div className='estiloPrincipal'></div>
+// Estilo: <div className='estiloPrincipal'></div>  EstilosCondicionales (en linea o con ClassName) en Clase 12 - 37'
 // JSX es una extension de JavaScript. Al escribir RAFCE genero una nueva App
 // App es el componente principal de toda la aplicacion. 
 // Un componente solo puede retornar un elemento, por eso una solucion es envolver todo en una etiqueta semantica como un <div> <nav>
 
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NavBar from './componentes/NavBar/NavBar'
 // import ItemCount from './componentes/ItemCount/ItemCount'
 // <Route path='/ItemCount' element={<ItemCount className='contadorCarrito' stock={15} inicial={1} />} />
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer'
-import NavBar from './componentes/NavBar/NavBar'
 import { CarritoProvider } from './context/CarritoContext'
 
 const App = () => {

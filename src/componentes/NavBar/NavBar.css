@@ -10,3 +10,9 @@ li {
     margin: 1rem;
     cursor: pointer;
 }
+
+.loginCar{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
