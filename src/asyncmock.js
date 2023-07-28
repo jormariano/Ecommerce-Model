@@ -1,4 +1,4 @@
-// Simulamos una base de datos
+// Simulamos una base de datos. Clase 14 Firebase II a los 15'
 
 const misProductos = [
     { id: "1", nombre: "Grecia ", precio: 50, stock: 10, img: "../img/grecia-1.jpg", idCat: "1" },

@@ -24,33 +24,33 @@ const NavBar = () => {
 
   return (
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <Link to="/" onClick={() => handleClick("HOME")} class="navbar-brand">HOME</Link>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <Link to="/" onClick={() => handleClick("HOME")} className="navbar-brand">HOME</Link>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li onClick={() => handleClick("GRECIA")} class="nav-item">
-                <NavLink to="/categoria/1" class="nav-link active" aria-current="page">GRECIA</NavLink>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li onClick={() => handleClick("GRECIA")} className="nav-item">
+                <NavLink to="/categoria/1" className="nav-link active" aria-current="page">GRECIA</NavLink>
               </li>
-              <li onClick={() => handleClick("TAILANDIA")} class="nav-item">
-                <NavLink to="/categoria/2" class="nav-link active" aria-current="page">TAILANDIA</NavLink>
+              <li onClick={() => handleClick("TAILANDIA")} className="nav-item">
+                <NavLink to="/categoria/2" className="nav-link active" aria-current="page">TAILANDIA</NavLink>
               </li>
-              <li onClick={() => handleClick("MEXICO")} class="nav-item">
-                <NavLink to="/categoria/3" class="nav-link active" aria-current="page">MEXICO</NavLink>
+              <li onClick={() => handleClick("MEXICO")} className="nav-item">
+                <NavLink to="/categoria/3" className="nav-link active" aria-current="page">MEXICO</NavLink>
               </li>
-              <li onClick={() => handleClick("ESPAÑA")} class="nav-item">
-                <NavLink to="/categoria/4" class="nav-link active" aria-current="page">ESPAÑA</NavLink>
+              <li onClick={() => handleClick("ESPAÑA")} className="nav-item">
+                <NavLink to="/categoria/4" className="nav-link active" aria-current="page">ESPAÑA</NavLink>
               </li>
             </ul>
           </div>
         </div>
       </nav>
       <div className="loginCar">
-        <Login />
         <CartWidget />
+        <Login />
       </div>
     </header>
   )

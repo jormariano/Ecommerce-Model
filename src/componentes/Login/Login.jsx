@@ -1,4 +1,5 @@
 // Clase 12 - 1h 7'
+// Quede en 1h 23'
 
 import './Login.css'
 import { useState } from "react"
@@ -14,8 +15,8 @@ const Login = () => {
         if (usuario === "jorgelina" && pass === "654321") {
             setVerificado(true);
         } else {
-            setUsuario("Intente de nuevo");
-            setPass("Intete DE NUEVO");
+            setUsuario("Inteta de nuevo");
+            setPass("Inteta DE NUEVO");
         }
     }
 
@@ -25,7 +26,7 @@ const Login = () => {
 
     return (
         <div>
-            {verificado ? (<button onClick={cerrarSesion}> Cerrar sesion </button >) : (
+            {verificado ? (<button onClick={cerrarSesion} className="loginUser closeBtn"> Cerrar sesion </button >) : (
 
                 <form onSubmit={habilitarUsuario} className="loginUser">
 
@@ -36,6 +37,8 @@ const Login = () => {
                     <input type="text" id="pass" onChange={(e) => setPass(e.target.value)} value={pass} />
 
                     <button> Iniciar sesión </button>
+
+                    {usuario === 'Inteta de nuevo' && pass === 'Inteta DE NUEVO' && <div className="error">Usuario o contraseña incorrectos</div>}
 
                 </form>
             )
