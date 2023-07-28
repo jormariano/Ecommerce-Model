@@ -12,6 +12,8 @@ import NavBar from './componentes/NavBar/NavBar'
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer'
 import { CarritoProvider } from './context/CarritoContext'
+import Cart from './componentes/Cart/Cart'
+import Checkout from './componentes/Ckeckout/Checkout'
 
 const App = () => {
   // Aca se escribe la parte logica. La funcion flecha sirve para renderizar la App en el navegador.
@@ -26,6 +28,8 @@ const App = () => {
             <Route path='/' element={<ItemListContainer title={"PRODUCCIÓN DE FOTOS"} />} />
             <Route path='/categoria/:idCategoria' element={<ItemListContainer title={"PRODUCCIÓN DE FOTOS"} />} />
             <Route path='/item/:idItem' element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Cart/>}  />
+            <Route path="/checkout" element={<Checkout/>}  />
             <Route path="*" element={<h2>Link inexistente, vuelva a intentarlo</h2>} />
           </Routes>
         </CarritoProvider>
