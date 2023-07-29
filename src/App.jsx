@@ -3,6 +3,7 @@
 // JSX es una extension de JavaScript. Al escribir RAFCE genero una nueva App
 // App es el componente principal de toda la aplicacion. 
 // Un componente solo puede retornar un elemento, por eso una solucion es envolver todo en una etiqueta semantica como un <div> <nav>
+// Para verlo en Netlify: producciondefotos.netlify.app
 
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'

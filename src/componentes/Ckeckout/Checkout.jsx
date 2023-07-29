@@ -104,19 +104,19 @@ const Checkout = () => {
                 <hr />
                 
                 <div className="form-group">
-                    <label htmlFor="">Nombre</label>
+                    <label htmlFor="nombre">Nombre</label>
                     <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
 
-                    <label htmlFor="">Apellido</label>
+                    <label htmlFor="apellido">Apellido</label>
                     <input type="text" value={apellido} onChange={(e) => setApellido(e.target.value)} />
 
-                    <label htmlFor="">Telefono</label>
+                    <label htmlFor="telefono">Telefono</label>
                     <input type="text" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
 
-                    <label htmlFor="">Email</label>
+                    <label htmlFor="email">Email</label>
                     <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
-                    <label htmlFor="">Email Confirmacion</label>
+                    <label htmlFor="emailConfirmacion">Email Confirmacion</label>
                     <input type="email" value={emailConfirmacion} onChange={(e) => setEmailConfirmacion(e.target.value)} />
 
                     {

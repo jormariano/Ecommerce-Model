@@ -1,3 +1,4 @@
+// Clase 15 1h 27': Extender la base de datos. Firebase, Cloud Firestore, Reglas y cambias la fecha de vencimiento
 // La primer funcion es para iniciar la conexion con firebase y la segunda es para obtener una instancia de Firestore
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
