@@ -1,5 +1,14 @@
-.imgCard {
-    height: 800px;
-    width: 100%;
-    margin: 4px;
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgsCarrito {
+    height: 300px;
+    width: 450px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }

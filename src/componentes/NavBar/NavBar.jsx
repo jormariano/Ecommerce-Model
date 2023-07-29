@@ -6,8 +6,6 @@ import { Link, NavLink } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import Login from '../Login/Login'
 import './NavBar.css'
-
-
 const NavBar = () => {
 
   const [categoria, setCategoria] = useState("");

@@ -1,9 +1,10 @@
 // Clase 14: Firebase II - 1h
+// Clase 15: Workshop final - 8' descuenta stock
 
 import { useState, useContext } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
 import { db } from "../../services/config";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
 import './Checkout.css'
 
 const Checkout = () => {
@@ -49,18 +50,40 @@ const Checkout = () => {
             email
         };
 
-        // 2- Guardamos la orden en la base de datos
+        // Promise.all() ejecutar varias promesas en paralelo: actualizar el stock de productos y generar una orden de compra
 
-        addDoc(collection(db, "ordenes"), orden)
-            .then(docRef => {
-                setOrdenId(docRef.id);
-                vaciarCarrito();
-            })
-            .catch(error => {
-                console.log("Error al crear la orden de compra", error);
-                setError("Se produjo un error al crear la orden de compra");
-            })
+        Promise.all(
 
+            orden.items.map(async (productoOrden) => {
+                const productoRef = doc(db, "productos", productoOrden.id);
+                // por cada producto en la coleccion productos obtengo una referencia y a partir de esa referencia obtengo el documento
+
+                const productoDoc = await getDoc(productoRef);
+
+                const stockActual = productoDoc.data().stock;
+
+                await updateDoc(productoRef, {
+                    stock: stockActual - productoOrden.cantidad,
+                })
+            })
+        )
+
+            .then(() => {
+                // Guardamos la orden en la base de datos 
+                addDoc(collection(db, "ordenes"), orden)
+                    .then((docRef) => {
+                        setOrdenId(docRef.id);
+                        vaciarCarrito();
+                    })
+                    .catch((error) => {
+                        console.log("Error al crear la orden", error);
+                        setError("Error al intentar crear la orden, hazlo de nuevo");
+                    });
+            })
+            .catch((error) => {
+                console.log("No se puede actualizar el stock", error);
+                setError("No se puede actualizar el stock, intente mas tarde");
+            })
     }
 
     return (
@@ -72,11 +95,14 @@ const Checkout = () => {
                         <div key={producto.item.id}>
                             <p>{producto.item.nombre} x {producto.cantidad}</p>
                             <p> {producto.item.precio} </p>
+
                             <hr />
                         </div>
                     ))
                 }
+                <strong>Cantidad total: {cantidadTotal}</strong>
                 <hr />
+                
                 <div className="form-group">
                     <label htmlFor="">Nombre</label>
                     <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />

@@ -4,7 +4,8 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration:
 const firebaseConfig = {
-    apiKey: "AIzaSyBaxgi7fkLUc62KGMS4WxCl3LACmdv0z1s",
+    // Clase 15 1h 5' Ocultamos la apiKey mediante las variables de entorno, descargar npm install dotenv --save -dev
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
     authDomain: "produccion-d814f.firebaseapp.com",
     projectId: "produccion-d814f",
     storageBucket: "produccion-d814f.appspot.com",
