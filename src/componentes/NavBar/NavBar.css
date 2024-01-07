@@ -9,7 +9,7 @@ header {
 .navbar-brand {
     display: inline-block;
     margin: 1rem;
-    padding: 20px 30px;
+    padding: 20px;
     font-weight: bold;
     border: none;
     border-radius: 4px;
@@ -19,7 +19,7 @@ header {
 li {
     display: inline-block;
     margin: 1rem;
-    padding: 10px 20px;
+    padding: 10px;
     font-weight: bold;
     border: none;
     border-radius: 4px;

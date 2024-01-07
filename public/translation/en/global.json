@@ -1,0 +1,10 @@
+{
+    "contacme.title": "CONTACT ME!",
+    "contactme.fullname": "FULL NAME *",
+    "contactme.email": "E-MAIL *",
+    "contactme.message": "MESSAGE *",
+    "contactme.query": "SEND INQUIRY",
+    "contactme.querysent": "Query sent",
+    "contactme.error": "Error, try again",
+    "contactme.obligatory": "Fields marked with (*) are obligatory."
+}

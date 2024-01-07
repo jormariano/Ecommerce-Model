@@ -1,4 +1,4 @@
-# Tienda Producción de Fotod
+# Tienda Producción de Fotos
 Este es un proyecto de ecommerce básico que se utiliza para el curso de React. La aplicación permite ver una lista de fotos únicas y originales para realizar compras en línea. Los productos y las órdenes de compra se almacenan en Firebase.
 
 ## Tecnologías utilizadas

@@ -3,10 +3,14 @@
 
 import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import Languages from '../Languages/Languages'
 import CartWidget from '../CartWidget/CartWidget'
 import Login from '../Login/Login'
 import './NavBar.css'
 const NavBar = () => {
+
+  const { t } = useTranslation(['global'])
 
   const [categoria, setCategoria] = useState("");
 
@@ -42,11 +46,15 @@ const NavBar = () => {
               <li onClick={() => handleClick("ESPAÑA")} className="nav-item">
                 <NavLink to="/categoria/4" className="nav-link active" aria-current="page">ESPAÑA</NavLink>
               </li>
+              <li onClick={() => handleClick("CONTACTO")} className="nav-item">
+                <NavLink to="/contact" className="nav-link active" aria-current="page">CONTACTO</NavLink>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
       <div className="loginCar">
+        <Languages />
         <CartWidget />
         <Login />
       </div>

@@ -1,0 +1,10 @@
+{
+    "contacme.title": "CONTÁCTAME!",
+    "contactme.fullname": "NOMBRE COMPLETO *",
+    "contactme.email": "CORREO ELECTRÓNICO *",
+    "contactme.message": "MENSAJE *",
+    "contactme.query": "ENVIAR CONSULTA",
+    "contactme.querysent": "Consulta enviada",
+    "contactme.error": "Error, intente nuevamente",
+    "contactme.obligatory": "Campos marcados con (*) obligatorios"
+}
