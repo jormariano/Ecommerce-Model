@@ -15,6 +15,7 @@ import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailCon
 import { CarritoProvider } from './context/CarritoContext'
 import Cart from './componentes/Cart/Cart'
 import Checkout from './componentes/Ckeckout/Checkout'
+import Footer from './componentes/Footer/Footer'
 
 const App = () => {
   // Aca se escribe la parte logica. La funcion flecha sirve para renderizar la App en el navegador.
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/checkout" element={<Checkout/>}  />
             <Route path="*" element={<h2>Link inexistente, vuelva a intentarlo</h2>} />
           </Routes>
+          <Footer />
         </CarritoProvider>
       </BrowserRouter>
     </>

@@ -1,5 +1,5 @@
 {
-  "name": "mi-tienda",
+  "name": "photography-ecommerce",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,9 +12,11 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "firebase": "^10.1.0",
+    "framer-motion": "^10.17.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.14.1"
+    "react-router-dom": "^6.14.1",
+    "react-scroll-to-top": "^3.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

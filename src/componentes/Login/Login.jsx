@@ -1,5 +1,4 @@
 // Clase 12 - 1h 7'
-// Quede en 1h 23'
 
 import './Login.css'
 import { useState } from "react"
