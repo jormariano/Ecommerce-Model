@@ -1,4 +1,3 @@
-import './Footer.css'
 import { motion } from 'framer-motion'
 import ScrollToTop from "react-scroll-to-top";
 

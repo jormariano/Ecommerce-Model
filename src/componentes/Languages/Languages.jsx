@@ -14,8 +14,8 @@ const Languages = () => {
     }
 
     const languages = [
-        { value: "en", label: 'English' },
-        { value: "es", label: 'Español' },
+        { value: "en", label: 'ENGLISH' },
+        { value: "es", label: 'ESPAÑOL' },
     ]
 
     return (

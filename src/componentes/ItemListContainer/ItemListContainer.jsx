@@ -12,6 +12,9 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../services/config";
 
 const ItemListContainer = (props) => {
+
+  const imgTitle = './img/img-title.png'
+
   const [productos, setProductos] = useState([]);
 
   const { idCategoria } = useParams();
@@ -34,8 +37,9 @@ const ItemListContainer = (props) => {
 
   return (
     <>
-      <h2> {props.title} </h2>
-      <ItemList productos={productos} />
+      <div className="img-title">
+        <ItemList productos={productos} />
+      </div>
     </>
   )
 }

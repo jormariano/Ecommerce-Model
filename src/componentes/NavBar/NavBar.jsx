@@ -1,63 +1,41 @@
-// Para usar Bootstrap hay que transformar Link o Navlink con la propiedad as. Ej: 
-// <Nav.Link as={Link} to="/tuCategoria">Nombre Categoria</Nav.Link>
-
-import { useState, useEffect } from 'react'
-import { Link, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
 import Languages from '../Languages/Languages'
 import CartWidget from '../CartWidget/CartWidget'
-import Login from '../Login/Login'
-import './NavBar.css'
+
 const NavBar = () => {
+
+  const imgTitle = './img/img-title.png'
+  const imgLogo = '/img/logo-landscapes.png'
+  const imgLogin = '/icon/navbar_login.svg'
 
   const { t } = useTranslation(['global'])
 
-  const [categoria, setCategoria] = useState("");
-
-  // Pasar dos parametros (), el primero es una funcion de callback y el segundo un array de dependencias
-  useEffect(() => {
-    document.title = `${categoria}`;
-  }, [categoria]);
-
-  // Funcion manejadora Handle
-  const handleClick = (categoria) => {
-    setCategoria(categoria);
-  }
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <Link to="/" onClick={() => handleClick("HOME")} className="navbar-brand">HOME</Link>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li onClick={() => handleClick("GRECIA")} className="nav-item">
-                <NavLink to="/categoria/1" className="nav-link active" aria-current="page">GRECIA</NavLink>
-              </li>
-              <li onClick={() => handleClick("TAILANDIA")} className="nav-item">
-                <NavLink to="/categoria/2" className="nav-link active" aria-current="page">TAILANDIA</NavLink>
-              </li>
-              <li onClick={() => handleClick("MEXICO")} className="nav-item">
-                <NavLink to="/categoria/3" className="nav-link active" aria-current="page">MEXICO</NavLink>
-              </li>
-              <li onClick={() => handleClick("ESPAÑA")} className="nav-item">
-                <NavLink to="/categoria/4" className="nav-link active" aria-current="page">ESPAÑA</NavLink>
-              </li>
-              <li onClick={() => handleClick("CONTACTO")} className="nav-item">
-                <NavLink to="/contact" className="nav-link active" aria-current="page">CONTACTO</NavLink>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <div className="loginCar">
-        <Languages />
-        <CartWidget />
-        <Login />
-      </div>
+      <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+        <Container>
+          <Navbar.Brand href="/"><img src={imgTitle} alt="Image logo" /></Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/categoria/1">ITALIA</Nav.Link>
+              <Nav.Link href="/categoria/2">TAILANDIA</Nav.Link>
+              <Nav.Link href="/categoria/3">JAPÓN</Nav.Link>
+              <Nav.Link href="/categoria/4">ESPAÑA</Nav.Link>
+              <Languages className='navbar-languages' />
+            </Nav>
+            <Nav>
+              <Nav.Link href="/contact">CONTACTO</Nav.Link>
+              <Nav.Link href="/login">LOGIN</Nav.Link>
+              <CartWidget />
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </header>
   )
 }

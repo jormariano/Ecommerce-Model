@@ -10,11 +10,17 @@
     margin-top: 15px;
 }
 
-.footer-socialnetworks a img {
-    padding: 0px;
-    margin: 0px 10px;
-    height: 40px;
-    width: 40px;
+.footer-socialnetworks {
+
+    a {
+        img {
+            padding: 0px;
+            margin: 0px 10px;
+            height: 40px;
+            width: 40px;
+        }
+    }
+
 }
 
 .footer-copy-logo {
@@ -23,12 +29,12 @@
 }
 
 .footer-copyright {
-    color: #000000;
+    color: $color-black;
     font-weight: bold;
     font-size: 0.8rem;
     margin: 10px 0px;
 }
 
 button.scroll-to-top {
-    background-color: black;
+    background-color: $color-black;
 }
