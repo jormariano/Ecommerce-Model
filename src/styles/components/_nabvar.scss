@@ -3,13 +3,11 @@ header {
         --bs-tertiary-bg-rgb: $color-background;
 
         .container {
-            margin-right: 0px;
-            margin-left: 0px;
 
             a.navbar-brand {
                 img {
-                    width: 240px;
-                    height: 50px;
+                    width: 220px;
+                    height: 46px;
                 }
             }
 
@@ -25,12 +23,17 @@ header {
             }
 
             .navbar-nav {
-                margin-left: auto;
+                margin-left: 10px;
                 align-items: center;
 
                 a {
                     font-weight: 800;
                     color: $color-black;
+
+                    .navbar-cart {
+                        padding: 5px;
+                        width: 2.5rem;
+                    }
                 }
 
             }

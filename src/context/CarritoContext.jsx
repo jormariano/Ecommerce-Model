@@ -1,5 +1,3 @@
-// CLASE 11 - 1h 5' HOOK USECONTEXT
-
 import { useState, createContext } from 'react';
 
 export const CarritoContext = createContext({

@@ -8,7 +8,6 @@ const ItemDetail = ({ id, nombre, precio, stock, img }) => {
 
   const [agregarCantidad, setAgregarCantidad] = useState(0);
 
-  // Usamos useContext:
   const { agregarProducto } = useContext(CarritoContext);
 
   const handlerCantidad = (cantidad) => {

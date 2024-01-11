@@ -37,9 +37,7 @@ const ItemListContainer = (props) => {
 
   return (
     <>
-      <div className="img-title">
-        <ItemList productos={productos} />
-      </div>
+      <ItemList productos={productos} />
     </>
   )
 }

@@ -7,7 +7,7 @@ import CartWidget from '../CartWidget/CartWidget'
 
 const NavBar = () => {
 
-  const imgTitle = './img/img-title.png'
+  const imgTitle = '/img/img-title.png'
   const imgLogo = '/img/logo-landscapes.png'
   const imgLogin = '/icon/navbar_login.svg'
 
@@ -31,7 +31,7 @@ const NavBar = () => {
             <Nav>
               <Nav.Link href="/contact">CONTACTO</Nav.Link>
               <Nav.Link href="/login">LOGIN</Nav.Link>
-              <CartWidget />
+              <CartWidget className='navbar-cart' />
             </Nav>
           </Navbar.Collapse>
         </Container>
