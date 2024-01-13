@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import Carousel from 'react-bootstrap/Carousel'
 
 
-const Item = ({ id, nombre, precio, img, img2, img3, nombre2, nombre3, stock }) => {
+const Item = ({ id, nombre, nombre2, nombre3, img, img2, img3 }) => {
     return (
         <>
             <div className="card">

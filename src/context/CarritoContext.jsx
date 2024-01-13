@@ -40,7 +40,6 @@ export const CarritoProvider = ({children}) => {
         }
     }
 
-    // Funcion para eliminar producto
 
     const eliminarProducto = (id) => {
         const productoEliminado = carrito.find(prod => prod.item.id === id);
@@ -51,7 +50,6 @@ export const CarritoProvider = ({children}) => {
         setTotal(prev => prev - (productoEliminado.item.precio * productoEliminado.cantidad));
     }
 
-    // Funcion para vaciar el carrito
 
     const vaciarCarrito = () => {
         setCarrito([]);
@@ -64,5 +62,4 @@ export const CarritoProvider = ({children}) => {
         <CarritoContext.Provider value={{carrito, total, cantidadTotal, agregarProducto, eliminarProducto, vaciarCarrito}}> {children} </CarritoContext.Provider>
         </>
     )
-    // Utilizamos la propiedad especial de children para todos aquellos componentes que puedan necesitar el carrito y sus metodos
 }

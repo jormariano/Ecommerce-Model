@@ -1,17 +1,10 @@
 import { useState, useEffect } from "react";
-// import { getProductos, getProductosCategoria } from "../../asyncmock";
-import ItemList from "../ItemList/ItemList";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../services/config";
 
-// collection es para vincular una coleccion de Firestone, ej: productos
-// getDocs trae todos los documentos de una Coleccion
-// query es para hacer consulta a la base de datos
-// where es para hacer un filtrado en la consulta
-
-
-const ItemListContainer = (props) => {
+const ItemsContainer = (props) => {
 
   const [productos, setProductos] = useState([]);
 
@@ -34,10 +27,16 @@ const ItemListContainer = (props) => {
   }, [idCategoria])
 
   return (
-    <>
-      <ItemList productos={productos} />
-    </>
+    <div>
+      {productos.map(producto => (
+        <div key={producto.id}>
+          <img src={producto.img} alt={producto.nombre} />
+          <Link to={`/item/${producto.id}`} className="card-title"><p>{producto.nombre}</p></Link>
+          {/* Agrega más información del producto según tus necesidades */}
+        </div>
+      ))}
+    </div>
   )
 }
 
-export default ItemListContainer
+export default ItemsContainer
