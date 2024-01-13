@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { CarritoContext } from '../../context/CarritoContext';
 import { useContext } from 'react';
 
-const ItemDetail = ({ id, nombre, precio, money, stock, img }) => {
+const ItemDetail = ({ id, nombre, nombre2, nombre3, precio, money, stock, img, img2, img3 }) => {
 
   const [agregarCantidad, setAgregarCantidad] = useState(0);
 
@@ -18,22 +18,40 @@ const ItemDetail = ({ id, nombre, precio, money, stock, img }) => {
   }
 
   return (
-    <>
-      <div className="card" style={{ width: '18rem' }}>
-        <img src={img} className="card-img-top" alt={nombre} />
-        <div className="card-body">
-          <h3>Nombre: {nombre}</h3>
-          <h4>Precio: {precio} {money}</h4>
-          <h4>ID: {id}</h4>
-          <p className="card-text">Puedes descargar e imprimir esta imagen original para hacerla un cuadro en tu casa.</p>
+    <main>
+      <section className='detail-container'>
+        <div className="item-detail">
+          <img src={img} alt={nombre} className='detail-img' />
+          <div className="item-body">
+            <h2>Ciudad: {nombre}</h2>
+            <h3>Precio: {precio} {money}</h3>
+          </div>
+          {
+            agregarCantidad > 0 ? (<Link to="/cart">Finalizar compra</Link>) : (<ItemCount inicial={1} stock={stock} funcionAgregar={handlerCantidad} />)
+          }
         </div>
-
-        {
-          agregarCantidad > 0 ? (<Link to="/cart">Finalizar compra</Link>) : (<ItemCount inicial={1} stock={stock} funcionAgregar={handlerCantidad} />)
-        }
-
-      </div>
-    </>
+        <div className="item-detail">
+          <img src={img2} alt={nombre2} className='detail-img' />
+          <div className="item-body">
+            <h2>Ciudad: {nombre2}</h2>
+            <h3>Precio: {precio} {money}</h3>
+          </div>
+          {
+            agregarCantidad > 0 ? (<Link to="/cart">Finalizar compra</Link>) : (<ItemCount inicial={1} stock={stock} funcionAgregar={handlerCantidad} />)
+          }
+        </div>
+        <div className="item-detail">
+          <img src={img3} alt={nombre3} className='detail-img' />
+          <div className="item-body">
+            <h2>Ciudad: {nombre3}</h2>
+            <h3>Precio: {precio} {money}</h3>
+          </div>
+          {
+            agregarCantidad > 0 ? (<Link to="/cart">Finalizar compra</Link>) : (<ItemCount inicial={1} stock={stock} funcionAgregar={handlerCantidad} />)
+          }
+        </div>
+      </section>
+    </main>
   )
 }
 
