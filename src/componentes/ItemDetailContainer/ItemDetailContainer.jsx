@@ -6,17 +6,17 @@ import { getDoc, doc } from "firebase/firestore";
 import { db } from "../../services/config";
 
 const ItemDetailContainer = () => {
-    const [producto, setProducto] = useState(null);
+    const [product, setProduct] = useState(null);
     const { idItem } = useParams();
 
     useEffect(() => {
-        const nuevoDoc = doc(db, "productos", idItem)
+        const newDoc = doc(db, "productos", idItem)
 
-        getDoc(nuevoDoc)
+        getDoc(newDoc)
             .then(res => {
                 const data = res.data();
-                const nuevoProducto = { id: res.id, ...data }
-                setProducto(nuevoProducto);
+                const newProduct = { id: res.id, ...data }
+                setProduct(newProduct);
             })
             .catch(error => console.log(error));
 
@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            <ItemDetail {...producto} />
+            <ItemDetail {...product} />
         </div>
     )
 }

@@ -1,15 +1,12 @@
-// Clase 12 
-
 import { useContext } from "react";
-import { CarritoContext } from "../../context/CarritoContext";
+import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import CartItem from "../CartItem/CartItem";
-import './Cart.css'
 
 const Cart = () => {
-    const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext);
+    const { cart, emptyCart, total, totalAmount } = useContext(CartContext);
 
-    if (cantidadTotal === 0) {
+    if (totalAmount === 0) {
         return (
             <div className="cart-container">
                 <h2 className="empty-cart-message"> No hay productos en el carrito. ¡Compra!</h2>
@@ -20,10 +17,10 @@ const Cart = () => {
 
     return (
         <div className="cart-container">
-            {carrito.map(producto => <CartItem key={producto.id}  {...producto} />)}
+            {cart.map(product => <CartItem key={product.id}  {...product} />)}
             <h3>Total: $ {total} </h3>
-            <h3>Cantidad total: {cantidadTotal} </h3>
-            <button onClick={() => vaciarCarrito()}> Vaciar Carrito </button>
+            <h3>Cantidad total: {totalAmount} </h3>
+            <button onClick={() => emptyCart()}> Vaciar Carrito </button>
             <Link to="/checkout"> Finalizar Compra </Link>
         </div>
     )

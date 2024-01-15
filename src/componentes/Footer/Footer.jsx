@@ -23,9 +23,9 @@ const Footer = () => {
                             alt="Link to GitHub" /></a>
                 </div>
                 <div className='footer-copy-logo'>
-                    <p className='footer-copyright'> Copyright © 2023 - Jorgelina Mariano</p>
+                    <p className='footer-copyright'> Copyright © 2023 - <a href="https://jorgelinamariano.netlify.app" target="_blank">Jorgelina Mariano</a></p>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

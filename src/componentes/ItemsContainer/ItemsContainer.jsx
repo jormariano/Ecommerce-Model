@@ -6,58 +6,58 @@ import { db } from "../../services/config";
 
 const ItemsContainer = (props) => {
 
-  const [productos, setProductos] = useState([]);
+  const [products, setProducts] = useState([]);
 
-  const { idCategoria } = useParams();
+  const { idCategory } = useParams();
 
   useEffect(() => {
-    const misProductos = idCategoria ? query(collection(db, "productos"), where("idCat", "==", idCategoria))
+    const myProducts = idCategory ? query(collection(db, "productos"), where("idCat", "==", idCategory))
       : collection(db, "productos");
 
-    getDocs(misProductos)
+    getDocs(myProducts)
       .then(res => {
-        const nuevosProductos = res.docs.map(doc => {
+        const newProducts = res.docs.map(doc => {
           const data = doc.data()
           return { id: doc.id, ...data }
         })
-        setProductos(nuevosProductos);
+        setProducts(newProducts);
       })
       .catch(error => console.log(error));
 
-  }, [idCategoria])
+  }, [idCategory])
 
   return (
     <main >
-      {productos.map(producto => (
-        <section key={producto.id} className="gallery-container">
+      {products.map(product => (
+        <section key={product.id} className="gallery-container">
            <div className="gallery-img img-5">
-            <Link to={`/item/${producto.id}`} className="card-title">
-              <img src={producto.img5} alt={producto.nombre2} />
+            <Link to={`/item/${product.id}`} className="card-title">
+              <img src={product.img5} alt={product.city2} />
             </Link>
           </div>
           <div className="gallery-img img-1">
-            <Link to={`/item/${producto.id}`} >
-              <img src={producto.img} alt={producto.nombre} />
+            <Link to={`/item/${product.id}`} >
+              <img src={product.img} alt={product.city} />
             </Link>
           </div>
           <div className="gallery-img img-2">
-            <Link to={`/item/${producto.id}`} className="card-title">
-              <img src={producto.img4} alt={producto.nombre2} />
+            <Link to={`/item/${product.id}`} className="card-title">
+              <img src={product.img4} alt={product.city2} />
             </Link>
           </div>
           <div className="gallery-img img-3">
-            <Link to={`/item/${producto.id}`} className="card-title">
-              <img src={producto.img2} alt={producto.nombre2} />
+            <Link to={`/item/${product.id}`} className="card-title">
+              <img src={product.img2} alt={product.city2} />
             </Link>
           </div>
           <div className="gallery-img img-6">
-            <Link to={`/item/${producto.id}`} className="card-title">
-              <img src={producto.img6} alt={producto.nombre2} />
+            <Link to={`/item/${product.id}`} className="card-title">
+              <img src={product.img6} alt={product.city2} />
             </Link>
           </div>
           <div className="gallery-img img-4">
-            <Link to={`/item/${producto.id}`} className="card-title">
-              <img src={producto.img3} alt={producto.nombre2} />
+            <Link to={`/item/${product.id}`} className="card-title">
+              <img src={product.img3} alt={product.city2} />
             </Link>
           </div>
         </section>

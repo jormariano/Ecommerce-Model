@@ -76,7 +76,8 @@
 .detail-container {
 
     display: flex;
-    
+    flex-wrap: wrap;
+
     .item-detail {
         width: 30rem;
         margin: 10px;
@@ -103,5 +104,232 @@
                 font-size: 0.8rem;
             }
         }
+    }
+}
+
+/* LOGIN */
+
+.closeBtn {
+    background-color: #dc3545;
+}
+
+.loginUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+
+    label {
+        margin-bottom: 6px;
+        font-weight: bold;
+    }
+
+    input {
+        width: 200px;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .error {
+        color: red;
+        font-size: 10px;
+        margin-bottom: 12px;
+    }
+
+}
+
+/* CART */
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    .empty-cart-message {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 20px;
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+    }
+
+    button {
+        background-color: #dc3545;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+}
+
+/* CHECKOUT */
+
+.checkout-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 10px 0;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        p.error {
+            color: red;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    }
+}
+
+/* CONTACT */
+
+.contact-container {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact-form-h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 2px auto;
+    padding: 10px;
+    border-radius: 10px;
+    color: #f6b8d5;
+}
+
+.contact-form input {
+    margin: 5px 0px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 160px;
+    margin: 10px 0px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+}
+
+.contact-form-button {
+    background-color: white;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    color: #09264f;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 10px auto;
+}
+
+.contact-form-p {
+    margin-top: 10px;
+    color: #000000;
+}
+
+@media (max-width: 500px) {
+    .contact-form-button {
+        padding: 1rem;
+        font-size: 1rem;
     }
 }

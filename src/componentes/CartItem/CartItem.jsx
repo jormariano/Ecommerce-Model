@@ -1,15 +1,15 @@
 import { useContext } from "react";
-import { CarritoContext } from "../../context/CarritoContext";
+import { CartContext } from "../../context/CartContext";
 
-const CartItem = ({item, cantidad}) => {
-    const {eliminarProducto} = useContext(CarritoContext);
+const CartItem = ({item, quantity}) => {
+    const {removeProduct} = useContext(CartContext);
 
   return (
     <div>
-        <h4> {item.nombre} </h4>
-        <p> Cantidad: {cantidad} </p>
-        <p> Precio: {item.precio} </p>
-        <button onClick={() => eliminarProducto(item.id)}> Eliminar </button>
+        <h4> {item.city} </h4>
+        <p> Cantidad: {quantity} </p>
+        <p> Precio: {item.price} </p>
+        <button onClick={() => removeProduct(item.id)}> Eliminar </button>
         <hr />
     </div>
   )

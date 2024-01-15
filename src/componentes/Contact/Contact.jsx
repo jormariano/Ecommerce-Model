@@ -1,4 +1,3 @@
-import './Contact.css'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import emailjs from 'emailjs-com'
@@ -42,15 +41,15 @@ const Contact = () => {
     return (
         <section>
             <div>
-                <h2>Info de contacto</h2>
+                <h2>{t('contactme.title')}</h2>
                 <div>
-                    <h3>Redes sociales</h3>
+                    <h3>{t('contactme.socialnetworks')}</h3>
                     <br />
-                    <h3>Mail</h3>
+                    <h3>{t('contactme.sendemail')}</h3>
                 </div>
             </div>
             <div>
-                <h2>Formulario de contacto</h2>
+                <h2>{t('contactme.title')}</h2>
                 <form>
                     <h3></h3>
 

@@ -1,87 +1,80 @@
-// Clase 14: Firebase II - 1h
-// Clase 15: Workshop final - 8' descuenta stock
-
 import { useState, useContext } from "react";
-import { CarritoContext } from "../../context/CarritoContext";
+import { CartContext } from "../../context/CartContext";
 import { db } from "../../services/config";
 import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
-import './Checkout.css'
 
 const Checkout = () => {
-    const [nombre, setNombre] = useState("");
-    const [apellido, setApellido] = useState("");
-    const [telefono, setTelefono] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [cellphone, setCellphone] = useState("");
     const [email, setEmail] = useState("");
-    const [emailConfirmacion, setEmailConfirmacion] = useState("");
+    const [emailConfirmation, setEmailConfirmation] = useState("");
     const [error, setError] = useState("");
     const [ordenId, setOrdenId] = useState("");
 
-    const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext);
+    const { cart, emptyCart, total, totalAmount } = useContext(CartContext);
 
-    const handlerFormulario = (event) => {
+    const handlerForm = (event) => {
 
         event.preventDefault();
 
-        // Funciones y validaciones:
+        // Function and validations:
 
-        if (!nombre || !apellido || !telefono || !email || !emailConfirmacion) {
+        if (!firstName || !lastName || !cellphone || !email || !emailConfirmation) {
             setError("Por favor completa todos los campos");
             return;
         }
 
-        if (email !== emailConfirmacion) {
+        if (email !== emailConfirmation) {
             setError("Los Email no coinciden, vuelva a intentarlo");
             return;
         }
 
-        // 1- Creamos un objeto con todos los datos de la orden de compra:
+        // Purchase order:
 
         const orden = {
-            items: carrito.map(producto => ({
-                id: producto.item.id,
-                nombre: producto.item.nombre,
-                cantidad: producto.cantidad
+            items: cart.map(product => ({
+                id: product.item.id,
+                city: product.item.city,
+                quantity: product.quantity
             })),
             total: total,
-            fecha: new Date(),
-            nombre,
-            apellido,
-            telefono,
+            date: new Date(),
+            firstName,
+            lastName,
+            cellphone,
             email
         };
 
-        // Promise.all() ejecutar varias promesas en paralelo: actualizar el stock de productos y generar una orden de compra
+       
 
         Promise.all(
 
-            orden.items.map(async (productoOrden) => {
-                const productoRef = doc(db, "productos", productoOrden.id);
-                // por cada producto en la coleccion productos obtengo una referencia y a partir de esa referencia obtengo el documento
+            orden.items.map(async (productOrden) => {
+                const productRef = doc(db, "productos", productOrden.id);
 
-                const productoDoc = await getDoc(productoRef);
+                const productDoc = await getDoc(productRef);
 
-                const stockActual = productoDoc.data().stock;
+                const currentStock = productDoc.data().stock;
 
-                await updateDoc(productoRef, {
-                    stock: stockActual - productoOrden.cantidad,
+                await updateDoc(productRef, {
+                    stock: currentStock - productOrden.quantity,
                 })
             })
         )
 
             .then(() => {
-                // Guardamos la orden en la base de datos 
+
                 addDoc(collection(db, "ordenes"), orden)
                     .then((docRef) => {
                         setOrdenId(docRef.id);
-                        vaciarCarrito();
+                        emptyCart();
                     })
                     .catch((error) => {
-                        console.log("Error al crear la orden", error);
                         setError("Error al intentar crear la orden, hazlo de nuevo");
                     });
             })
             .catch((error) => {
-                console.log("No se puede actualizar el stock", error);
                 setError("No se puede actualizar el stock, intente mas tarde");
             })
     }
@@ -89,35 +82,35 @@ const Checkout = () => {
     return (
         <div className="checkout-container">
             <h2>Checkout</h2>
-            <form onSubmit={handlerFormulario}>
+            <form onSubmit={handlerForm}>
                 {
-                    carrito.map(producto => (
-                        <div key={producto.item.id}>
-                            <p>{producto.item.nombre} x {producto.cantidad}</p>
-                            <p> {producto.item.precio} </p>
+                    cart.map(product => (
+                        <div key={product.item.id}>
+                            <p>{product.item.city} x {product.quantity}</p>
+                            <p> {product.item.price} </p>
 
                             <hr />
                         </div>
                     ))
                 }
-                <strong>Cantidad total: {cantidadTotal}</strong>
+                <strong>Cantidad total: {totalAmount}</strong>
                 <hr />
-                
+
                 <div className="form-group">
-                    <label htmlFor="nombre">Nombre</label>
-                    <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+                    <label htmlFor="firstName" >Nombre</label>
+                    <input type="text" id="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
 
-                    <label htmlFor="apellido">Apellido</label>
-                    <input type="text" value={apellido} onChange={(e) => setApellido(e.target.value)} />
+                    <label htmlFor="lastName" >Apellido</label>
+                    <input type="text" id="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} />
 
-                    <label htmlFor="telefono">Telefono</label>
-                    <input type="text" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
+                    <label htmlFor="cellphone">Telefono</label>
+                    <input type="text" id="cellphone" value={cellphone} onChange={(e) => setCellphone(e.target.value)} />
 
-                    <label htmlFor="email">Email</label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <label htmlFor="email" >Email</label>
+                    <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
-                    <label htmlFor="emailConfirmacion">Email Confirmacion</label>
-                    <input type="email" value={emailConfirmacion} onChange={(e) => setEmailConfirmacion(e.target.value)} />
+                    <label htmlFor="emailConfirmation" >Email Confirmacion</label>
+                    <input type="email" id="emailConfirmation" value={emailConfirmation} onChange={(e) => setEmailConfirmation(e.target.value)} />
 
                     {
                         error && <p style={{ color: "red" }}>{error}</p>

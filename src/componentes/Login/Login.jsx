@@ -1,43 +1,44 @@
-// Clase 12 - 1h 7'
-
-import './Login.css'
 import { useState } from "react"
+import { useTranslation } from 'react-i18next'
 
 const Login = () => {
-    const [verificado, setVerificado] = useState(false);
-    const [usuario, setUsuario] = useState('');
+
+    const { t } = useTranslation(['global'])
+
+    const [check, setCheck] = useState(false);
+    const [user, setUser] = useState('');
     const [pass, setPass] = useState('');
 
-    const habilitarUsuario = (e) => {
+    const verifiedUser = (e) => {
         e.preventDefault();
 
-        if (usuario === "jorgelina" && pass === "654321") {
-            setVerificado(true);
+        if (user === "jorgelina" && pass === "654321") {
+            setCheck(true);
         } else {
-            setUsuario("Inteta de nuevo");
-            setPass("Inteta DE NUEVO");
+            setUser("Usuario incorrecta");
+            setPass("Contrasenia incorrecta");
         }
     }
 
-    const cerrarSesion = () => {
-        setVerificado(false);
+    const signOff = () => {
+        setCheck(false);
     }
 
     return (
         <div>
-            {verificado ? (<button onClick={cerrarSesion} className="loginUser closeBtn"> Cerrar sesion </button >) : (
+            {check ? (<button onClick={signOff} className="closeBtn"> Cerrar sesion </button >) : (
 
-                <form onSubmit={habilitarUsuario} className="loginUser">
+                <form onSubmit={verifiedUser} className="loginUser">
 
-                    <label htmlFor="usuario">Usuario: </label>
-                    <input type="text" id="usuario" onChange={(e) => setUsuario(e.target.value)} value={usuario} />
+                    <label htmlFor="user"> {t('login.user')} </label>
+                    <input type="text" id="user" onChange={(e) => setUser(e.target.value)} value={user} />
 
-                    <label htmlFor="pass">Contraseña: </label>
+                    <label htmlFor="pass">{t('login.password')} </label>
                     <input type="text" id="pass" onChange={(e) => setPass(e.target.value)} value={pass} />
 
-                    <button> Iniciar sesión </button>
+                    <button> {t('login.login')} </button>
 
-                    {usuario === 'Inteta de nuevo' && pass === 'Inteta DE NUEVO' && <div className="error">Usuario o contraseña incorrectos</div>}
+                    {user === 'Inteta de nuevo' && pass === 'Inteta DE NUEVO' && <div className="error">Usuario o contraseña incorrectos</div>}
 
                 </form>
             )

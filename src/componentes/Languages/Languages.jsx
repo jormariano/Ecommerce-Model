@@ -6,7 +6,7 @@ const Languages = () => {
 
     const { i18n } = useTranslation(['global'])
 
-    const handleChangeLanguage = (selectedOption) => {
+    const handlerChangeLanguage = (selectedOption) => {
 
         const selectedLanguage = selectedOption.value;
         i18n.changeLanguage(selectedLanguage);
@@ -22,7 +22,7 @@ const Languages = () => {
         <Select
             defaultValue={languages[0]}
             options={languages}
-            onChange={handleChangeLanguage}
+            onChange={handlerChangeLanguage}
             styles={colorStyles}
         />
     )

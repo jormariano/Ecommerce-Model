@@ -33,6 +33,15 @@
     font-weight: bold;
     font-size: 0.8rem;
     margin: 10px 0px;
+
+    a {
+        text-decoration: none;
+        color: $color-black;
+    }
+
+    a:hover {
+        color: $color-blue;
+    }
 }
 
 button.scroll-to-top {

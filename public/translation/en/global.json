@@ -1,10 +1,23 @@
 {
-    "contacme.title": "CONTACT ME!",
+    "navbar.italy": "ITALY",
+    "navbar.thailand": "THAILAND",
+    "navbar.japan": "JAPAN",
+    "navbar.spain": "SPAIN",
+    "navbar.login": "LOGIN",
+    "navbar.contact": "CONTACT",
+    "login.user": "User:",
+    "login.password": "Password:",
+    "login.login": "Log In",
+    "contactme.title": "CONTACT ME!",
+    "contactme.socialnetworks": "SOCIAL NETWORKS",
+    "contactme.sendemail": "E-MAIL",
     "contactme.fullname": "FULL NAME *",
     "contactme.email": "E-MAIL *",
     "contactme.message": "MESSAGE *",
     "contactme.query": "SEND INQUIRY",
     "contactme.querysent": "Query sent",
     "contactme.error": "Error, try again",
-    "contactme.obligatory": "Fields marked with (*) are obligatory."
+    "contactme.obligatory": "Fields marked with (*) are obligatory.",
+    "notfound": "Link does not exist, return to",
+    "notfound.home": "Home"
 }

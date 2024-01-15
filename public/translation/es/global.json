@@ -1,10 +1,23 @@
 {
-    "contacme.title": "CONTÁCTAME!",
+    "navbar.italy": "ITALIA",
+    "navbar.thailand": "TAILANDIA",
+    "navbar.japan": "JAPÓN",
+    "navbar.spain": "ESPAÑA",
+    "navbar.login": "INICIAR SESIÓN",
+    "navbar.contact": "CONTACTO",
+    "login.user": "Usuario:",
+    "login.password": "Contraseña:",
+    "login.login": "Iniciar sesión",
+    "contactme.title": "CONTÁCTAME!",
+    "contactme.socialnetworks": "REDES SOCIALES",
+    "contactme.sendemail": "CORREO ELECTRÓNICO",
     "contactme.fullname": "NOMBRE COMPLETO *",
     "contactme.email": "CORREO ELECTRÓNICO *",
     "contactme.message": "MENSAJE *",
     "contactme.query": "ENVIAR CONSULTA",
     "contactme.querysent": "Consulta enviada",
     "contactme.error": "Error, intente nuevamente",
-    "contactme.obligatory": "Campos marcados con (*) obligatorios"
+    "contactme.obligatory": "Campos marcados con (*) obligatorios",
+    "notfound": "Link inexistente, vuelve a",
+    "notfound.home": "Inicio"
 }

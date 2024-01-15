@@ -1,10 +1,9 @@
-import { useTranslation } from 'react-i18next'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import ReactSwitch from 'react-switch'
-import Languages from '../Languages/Languages'
 import CartWidget from '../CartWidget/CartWidget'
+import Languages from '../Languages/Languages'
+import { useTranslation } from 'react-i18next'
 
 const NavBar = () => {
 
@@ -21,14 +20,14 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/categoria/1">ITALIA</Nav.Link>
-              <Nav.Link href="/categoria/2">TAILANDIA</Nav.Link>
-              <Nav.Link href="/categoria/3">JAPÓN</Nav.Link>
-              <Nav.Link href="/categoria/4">ESPAÑA</Nav.Link>
+              <Nav.Link href="/category/1">{t('navbar.italy')}</Nav.Link>
+              <Nav.Link href="/category/2">{t('navbar.thailand')}</Nav.Link>
+              <Nav.Link href="/category/3">{t('navbar.japan')}</Nav.Link>
+              <Nav.Link href="/category/4">{t('navbar.spain')}</Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link href="/contact">CONTACTO</Nav.Link>
-              <Nav.Link href="/login">LOGIN</Nav.Link>
+              <Nav.Link href="/contact">{t('navbar.contact')}</Nav.Link>
+              <Nav.Link href="/login">{t('navbar.login')}</Nav.Link>
               <CartWidget className='navbar-cart' />
               <Languages className='navbar-languages' />
             </Nav>
