@@ -28,15 +28,14 @@ const ItemCount = ({ initial, stock, addFunction }) => {
   }
 
   return (
-    <>
-      <div className='contadorCarrito'>
-        <h5>Contador:</h5>
+    <div className='count-cart'>
+      <div className='count-add'>
         <button type="button" class="btn btn-primary btn-sm" onClick={decrease}> - </button>
         <strong> {counter} </strong>
         <button type="button" class="btn btn-primary btn-sm" onClick={increase}> + </button>
       </div>
       <button type="button" class="btn btn-success" onClick={() => addFunction(counter)} style={{ color: color }} >Agregar al Carrito</button>
-    </>
+    </div>
   )
 }
 

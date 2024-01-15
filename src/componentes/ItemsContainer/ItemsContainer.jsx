@@ -27,40 +27,13 @@ const ItemsContainer = (props) => {
   }, [idCategory])
 
   return (
-    <main >
+    <main className="gallery-container">
       {products.map(product => (
-        <section key={product.id} className="gallery-container">
-           <div className="gallery-img img-5">
-            <Link to={`/item/${product.id}`} className="card-title">
-              <img src={product.img5} alt={product.city2} />
-            </Link>
-          </div>
-          <div className="gallery-img img-1">
-            <Link to={`/item/${product.id}`} >
-              <img src={product.img} alt={product.city} />
-            </Link>
-          </div>
-          <div className="gallery-img img-2">
-            <Link to={`/item/${product.id}`} className="card-title">
-              <img src={product.img4} alt={product.city2} />
-            </Link>
-          </div>
-          <div className="gallery-img img-3">
-            <Link to={`/item/${product.id}`} className="card-title">
-              <img src={product.img2} alt={product.city2} />
-            </Link>
-          </div>
-          <div className="gallery-img img-6">
-            <Link to={`/item/${product.id}`} className="card-title">
-              <img src={product.img6} alt={product.city2} />
-            </Link>
-          </div>
-          <div className="gallery-img img-4">
-            <Link to={`/item/${product.id}`} className="card-title">
-              <img src={product.img3} alt={product.city2} />
-            </Link>
-          </div>
-        </section>
+        <div key={product.id} className="gallery-img">
+          <Link to={`/item/${product.id}`} >
+            <img src={product.img} alt={product.city} />
+          </Link>
+        </div>
       ))}
     </main>
   )

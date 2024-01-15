@@ -21,8 +21,8 @@ const NavBar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/category/1">{t('navbar.italy')}</Nav.Link>
-              <Nav.Link href="/category/2">{t('navbar.thailand')}</Nav.Link>
-              <Nav.Link href="/category/3">{t('navbar.japan')}</Nav.Link>
+              <Nav.Link href="/category/2">{t('navbar.japan')}</Nav.Link>
+              <Nav.Link href="/category/3">{t('navbar.thailand')}</Nav.Link>
               <Nav.Link href="/category/4">{t('navbar.spain')}</Nav.Link>
             </Nav>
             <Nav>

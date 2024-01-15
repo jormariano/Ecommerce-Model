@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import { useContext } from 'react';
 
-const ItemDetail = ({ id, city, city2, city3, price, money, stock, img, img2, img3 }) => {
+const ItemDetail = ({ id, city, price, money, stock, img }) => {
 
   const [addAmount, setAddAmount] = useState(0);
 
@@ -18,39 +18,18 @@ const ItemDetail = ({ id, city, city2, city3, price, money, stock, img, img2, im
   }
 
   return (
-    <main>
-      <section className='detail-container'>
-        <div className="item-detail">
-          <img src={img} alt={city} className='detail-img' />
-          <div className="item-body">
-            <h2>Ciudad: {city}</h2>
-            <h3>Precio: {price} {money}</h3>
-          </div>
+    <main className='detail-container'>
+      <div className='item-detail'>
+        <img src={img} alt={city} className='detail-img' />
+        <div className="item-body">
+          <h2>Ciudad: {city}</h2>
+          <h3>Precio: {price} {money}</h3>
+          <h3>Stock: {stock} </h3>
           {
             addAmount > 0 ? (<Link to="/cart">Finalizar compra</Link>) : (<ItemCount initial={1} stock={stock} addFunction={handlerAmount} />)
           }
         </div>
-        <div className="item-detail">
-          <img src={img2} alt={city2} className='detail-img' />
-          <div className="item-body">
-            <h2>Ciudad: {city2}</h2>
-            <h3>Precio: {price} {money}</h3>
-          </div>
-          {
-            addAmount > 0 ? (<Link to="/cart">Finalizar compra</Link>) : (<ItemCount initial={1} stock={stock} addFunction={handlerAmount} />)
-          }
-        </div>
-        <div className="item-detail">
-          <img src={img3} alt={city3} className='detail-img' />
-          <div className="item-body">
-            <h2>Ciudad: {city3}</h2>
-            <h3>Precio: {price} {money}</h3>
-          </div>
-          {
-            addAmount > 0 ? (<Link to="/cart">Finalizar compra</Link>) : (<ItemCount initial={1} stock={stock} addFunction={handlerAmount} />)
-          }
-        </div>
-      </section>
+      </div>
     </main>
   )
 }
