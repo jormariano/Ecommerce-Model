@@ -1,19 +1,12 @@
-import { useState, useEffect } from "react"
-
+import { useState } from "react"
+import { useTranslation } from 'react-i18next'
 
 const ItemCount = ({ initial, stock, addFunction }) => {
+
+  const { t } = useTranslation(['global'])
+
   const [counter, setCounter] = useState(initial);
 
-  const [color, setColor] = useState("white");
-
-  useEffect(() => {
-
-    if (counter > 6) {
-      setColor("red");
-    } else {
-      setColor("white")
-    }
-  }, [counter])
 
   const increase = () => {
     if (counter < stock) {
@@ -30,11 +23,11 @@ const ItemCount = ({ initial, stock, addFunction }) => {
   return (
     <div className='count-cart'>
       <div className='count-add'>
-        <button type="button" class="btn btn-primary btn-sm" onClick={decrease}> - </button>
+        <button type="button" onClick={decrease}> - </button>
         <strong> {counter} </strong>
-        <button type="button" class="btn btn-primary btn-sm" onClick={increase}> + </button>
+        <button type="button" onClick={increase}> + </button>
       </div>
-      <button type="button" class="btn btn-success" onClick={() => addFunction(counter)} style={{ color: color }} >Agregar al Carrito</button>
+      <button type="button" className="button-add" onClick={() => addFunction(counter)} > {t('itemcount.add')} </button>
     </div>
   )
 }

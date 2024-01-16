@@ -39,17 +39,15 @@ const Contact = () => {
 
 
     return (
-        <section>
-            <div>
-                <h2>{t('contactme.title')}</h2>
+        <section className='section-contact'>
+            <h2>{t('contactme.title')}</h2>
+            <div className='section-container'>
                 <div>
                     <h3>{t('contactme.socialnetworks')}</h3>
                     <br />
                     <h3>{t('contactme.sendemail')}</h3>
                 </div>
-            </div>
             <div>
-                <h2>{t('contactme.title')}</h2>
                 <form>
                     <h3></h3>
 
@@ -63,6 +61,7 @@ const Contact = () => {
 
                     <p className='contact-form-p'> {t('contactme.obligatory')} </p>
                 </form>
+            </div>
             </div>
         </section>
     )

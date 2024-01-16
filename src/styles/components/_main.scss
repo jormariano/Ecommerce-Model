@@ -2,6 +2,7 @@
 
 .products-container {
     display: grid;
+    padding: 5px;
     grid-auto-rows: 400px;
     grid-template-columns: repeat(2, 1fr);
 
@@ -26,6 +27,27 @@
         &:nth-child(7) {
             grid-row: span 2;
         }
+
+        &:nth-child(11) {
+            grid-row: span 2;
+        }
+
+        &:nth-child(13) {
+            grid-row: span 2;
+        }
+
+        &:nth-child(17) {
+            grid-row: span 2;
+        }
+
+        &:nth-child(19) {
+            grid-row: span 2;
+        }
+
+        &:nth-child(23) {
+            grid-row: span 2;
+        }
+
 
         img {
             max-height: 100%;
@@ -56,6 +78,7 @@
 
 .gallery-container {
     display: grid;
+    padding: 5px;
     grid-auto-rows: 400px;
     grid-template-columns: repeat(2, 1fr);
     gap: 2px;
@@ -86,31 +109,39 @@
 .detail-container {
     display: flex;
     justify-content: center;
-    align-items: center;
 
     .item-detail {
-        width: 35rem;
-        display: flex;
+        background-color: $color-pink1;
 
-        .detail-img {
-            width: 100%;
+        h2 {
+            text-align: left;
+            margin: 8px 50px;
+            font-size: 1.6rem;
         }
 
-        .item-body {
-            text-align: center;
-            border: $color-grey 1px solid;
+        img {
+            width: 100%;
+            padding: 0px 20px 20px 20px;
+        }
+    }
 
-            h2 {
-                font-size: 1.5rem;
-            }
+    .item-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        width: 300px;
+        border: $color-pink1 1px solid;
 
-            h3 {
-                font-size: 1rem;
-            }
+        h3 {
+            font-size: 1rem;
+            padding-left: 15px;
+            margin-bottom: 40px;
+        }
 
-            p {
-                font-size: 0.8rem;
-            }
+        h4 {
+            font-size: 1.6rem;
+            padding: 10px 0px 5px 15px;
         }
     }
 }
@@ -119,20 +150,46 @@
 
 .count-cart {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 
     .count-add {
+
+        font-size: 1.4rem;
+
         button {
+            padding: 0px 4px;
             font-weight: bold;
-            color: $color-white;
-            background-color: $color-black;
+            background-color: $color-pink1;
+            border: none;
+            border-radius: 5px;
+            width: 30px;
             margin: 0px 5px;
         }
     }
 
-    button {
-        margin: 0px 10px;
+    .button-add {
+        background-color: $color-pink1;
+        font-weight: bold;
+        font-size: 1.4rem;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin: 10px 0px;
+    }
+}
+
+/* CONTACT */
+
+.section-contact {
+    margin: 0px 50px;
+    gap: 50px;
+
+    .section-container {
+        display: flex;
+        gap: 50px;
     }
 }
 

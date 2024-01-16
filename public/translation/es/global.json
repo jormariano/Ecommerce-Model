@@ -17,7 +17,15 @@
     "contactme.query": "ENVIAR CONSULTA",
     "contactme.querysent": "Consulta enviada",
     "contactme.error": "Error, intente nuevamente",
-    "contactme.obligatory": "Campos marcados con (*) obligatorios",
+    "contactme.obligatory": "Campos marcados con (*) obligatorios.",
+    "itemdetail.description": "Al comprar y descargar la imagen, la puedes utilizar sin restricciones.",
+    "itemdetail.pixels": "Tamaño",
+    "itemdetail.small": "Pequeña",
+    "itemdetail.median": "Mediana",
+    "itemdetail.big": "Grande",
+    "itemdetail.buy": "Finalizar compra",
+    "itemdetail.price": "Precio:",
+    "itemcount.add": "Añadir al carrito",
     "notfound": "Link inexistente, vuelve a",
     "notfound.home": "Inicio"
 }

@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
     
-    const { totalAmount } = useContext(CartContext);
+    const {totalAmount} = useContext(CartContext);
+
     const imgCart = "/icon/navbar_cart.svg"
     
     return (

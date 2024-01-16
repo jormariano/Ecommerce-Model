@@ -18,6 +18,14 @@
     "contactme.querysent": "Query sent",
     "contactme.error": "Error, try again",
     "contactme.obligatory": "Fields marked with (*) are obligatory.",
+    "itemdetail.description": "By purchasing and downloading the image, you can use it without restrictions.",
+    "itemdetail.pixels": "Size",
+    "itemdetail.small": "Small",
+    "itemdetail.median": "Median",
+    "itemdetail.big": "Big",
+    "itemdetail.price": "Price:",
+    "itemdetail.buy": "Finalize purchase",
+    "itemcount.add": "Add to cart",
     "notfound": "Link does not exist, return to",
     "notfound.home": "Home"
 }

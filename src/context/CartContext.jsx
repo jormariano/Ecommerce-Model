@@ -1,48 +1,70 @@
-import { useState, createContext } from 'react';
+import { useEffect, useState, createContext } from "react";
 
 export const CartContext = createContext({
     cart: [],
     total: 0,
     totalAmount: 0
-});
+})
 
-export const CartProvider = ({children}) => {
+
+export const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
     const [total, setTotal] = useState(0);
-    const [totalAmount, setTotalAmount] = useState(0);
+    const [totalAmount, setTotalAmount] = useState(0)
 
+    useEffect(() => {
+        // Recuperar el estado del carrito desde localStorage al cargar el componente
+        const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+        const storedTotalAmount = parseInt(localStorage.getItem("totalAmount"), 10) || 0;
+        const storedTotal = parseInt(localStorage.getItem("total"), 10) || 0;
     
-    const addProduct = (item, quantity) => {
-        const existentProduct = cart.find(prod => prod.item.id === item.id);
+        setCart(storedCart);
+        setTotalAmount(storedTotalAmount);
+        setTotal(storedTotal);
+      }, []);
+    
+      useEffect(() => {
+        // Almacenar el estado del carrito en localStorage cada vez que cambie
+        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("totalAmount", totalAmount.toString());
+        localStorage.setItem("total", total.toString());
+      }, [cart, totalAmount, total]);
+
+    const addProducts = (item, quantity) => {
+
+        const existentProduct = cart.find(prod => prod.item.id === item.id)
 
         if (!existentProduct) {
-            setCart(prev => [...prev, { item, quantity }]);
-            setTotalAmount(prev => prev + quantity);
-            setTotal(prev => prev + (item.price * quantity));
-            
+            setCart(prev => [...prev, { item, quantity }])
+            setTotalAmount(prev => prev + quantity)
+            setTotal(prev => prev + (item.price * quantity))
+
         } else {
-            const updateCart = cart.map(prod => {
+
+            const cartUpdate = cart.map(prod => {
+
                 if (prod.item.id === item.id) {
-                    return { ...prod, quantity: prod.quantity + quantity };
+                    return { ...prod, quantity: prod.quantity + quantity }
+
                 } else {
-                    return prod;
+                    return prod
                 }
-            });
-            setCart(updateCart);
-            setTotalAmount(prev => prev + quantity);
-            setTotal(prev => prev + (item.price * quantity));
+            })
+
+            setCart(cartUpdate)
+            setTotalAmount(prev => prev + quantity)
+            setTotal(prev => prev + (item.price * quantity))
         }
     }
 
-
     const removeProduct = (id) => {
-        const itemRemoved = cart.find(prod => prod.item.id === id);
-        const updateCart = cart.filter(prod => prod.item.id !== id);
+        const productRemove = cart.find(prod => prod.item.id === id);
+        const cartUpdate = cart.filter(prod => prod.item.id !== id);
 
-        setCart(updateCart);
-        setTotalAmount(prev => prev - itemRemoved.quantity);
-        setTotal(prev => prev - (itemRemoved.item.price * itemRemoved.quantity));
+        setCart(cartUpdate);
+        setTotalAmount(prev => prev - productRemove.quantity);
+        setTotal(prev => prev - (productRemove.item.precio * productRemove.quantity));
     }
 
 
@@ -53,8 +75,8 @@ export const CartProvider = ({children}) => {
     }
 
     return (
-        <>
-        <CartContext.Provider value={{cart, total, totalAmount, addProduct, removeProduct, emptyCart}}> {children} </CartContext.Provider>
-        </>
+        <CartContext.Provider value={{ cart, addProducts, removeProduct, emptyCart, total, totalAmount }}>
+            {children}
+        </CartContext.Provider>
     )
 }
