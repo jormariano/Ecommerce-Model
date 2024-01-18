@@ -26,6 +26,11 @@
     "itemdetail.buy": "Finalizar compra",
     "itemdetail.price": "Precio:",
     "itemcount.add": "Añadir al carrito",
+    "cart.total": "Cantidad total:",
+    "cart.empty": "Vaciar carrito",
+    "cart.finalize": "Finalizar compra",
+    "cartitem.quantity": "Cantidad:",
+    "cartitem.price": "Precio:",
     "notfound": "Link inexistente, vuelve a",
     "notfound.home": "Inicio"
 }

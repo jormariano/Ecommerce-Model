@@ -1,16 +1,22 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import { useTranslation } from 'react-i18next'
 
-const CartItem = ({item, quantity}) => {
-    const {removeProduct} = useContext(CartContext);
+const CartItem = ({ item, quantity }) => {
+  
+  const { removeProduct } = useContext(CartContext);
+
+  const { t } = useTranslation(['global'])
 
   return (
-    <div>
-        <h4> {item.city} </h4>
-        <p> Cantidad: {quantity} </p>
-        <p> Precio: {item.price} </p>
+    <div className="cartitem-container">
+      <div className="cartitem-items">
+        <h3> {item.city} </h3>
+        <h4> {t('cartitem.quantity')} {quantity} </h4>
+        <h4> {t('cartitem.price')} {item.price} usd </h4>
         <button onClick={() => removeProduct(item.id)}> Eliminar </button>
-        <hr />
+      </div>
+      <img src={item.img} alt={item.city} />
     </div>
   )
 }

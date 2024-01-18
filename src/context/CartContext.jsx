@@ -14,6 +14,7 @@ export const CartProvider = ({ children }) => {
     const [totalAmount, setTotalAmount] = useState(0)
 
     useEffect(() => {
+        
         // Recuperar el estado del carrito desde localStorage al cargar el componente
         const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
         const storedTotalAmount = parseInt(localStorage.getItem("totalAmount"), 10) || 0;
@@ -25,6 +26,7 @@ export const CartProvider = ({ children }) => {
       }, []);
     
       useEffect(() => {
+        
         // Almacenar el estado del carrito en localStorage cada vez que cambie
         localStorage.setItem("cart", JSON.stringify(cart));
         localStorage.setItem("totalAmount", totalAmount.toString());

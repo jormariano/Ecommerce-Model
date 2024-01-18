@@ -26,6 +26,11 @@
     "itemdetail.price": "Price:",
     "itemdetail.buy": "Finalize purchase",
     "itemcount.add": "Add to cart",
+    "cart.total": "Total quantity:",
+    "cart.empty": "Empty cart",
+    "cart.finalize": "Finalize purchase",
+    "cartitem.quantity": "Quantity:",
+    "cartitem.price": "Price:",
     "notfound": "Link does not exist, return to",
     "notfound.home": "Home"
 }

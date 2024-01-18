@@ -15,8 +15,10 @@ const ItemDetail = ({ id, city, price, money, stock, img, pixels }) => {
   const handlerAmount = (quantity) => {
     setAddAmount(quantity);
 
+/*--- Construccion del item ---*/
 
-    const item = { id, city, price };
+    const item = { id, city, price, img };
+
     addProducts(item, quantity);
   }
 
