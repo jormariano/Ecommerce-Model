@@ -1,4 +1,4 @@
-![Imagen del proyecto](https://github.com/jormariano/landscapes/tree/main/public/img/home1.png)
+![Imagen del proyecto](public/img/home1.png)
 
 # Landscapes Photography
 Este es un proyecto de ecommerce básico. La aplicación permite ver una lista de fotos obtenidas de https://www.pexels.com/es-es/ para simular su compra en línea. Los productos y las órdenes de compra se almacenan en Firebase.
@@ -7,13 +7,14 @@ Este es un proyecto de ecommerce básico. La aplicación permite ver una lista d
 
 - Vite
 - SASS
-- React
-- React Router
-- React i18next
-- React Scroll to top 
-- React Select
-- React Switch
 - Firebase
+- React
+- Librerías de React: 
+  - Router dom
+  - i18next
+  - Scroll to top 
+  - Select
+  - Switch
 
 ## Funcionalidades
 - Ver una lista de productos disponibles
@@ -43,14 +44,12 @@ Este es un proyecto de ecommerce básico. La aplicación permite ver una lista d
 
 ## Hola!👋
 
-¡Bienvenido a mi proyecto! Soy Jorgelina Mariano programadora Frontend y estudiante de Backend. Espero que hayas encontrado útil este código.
+¡Gracias por ingresar a mi proyecto! Soy Jorgelina Mariano, programadora Frontend y actualmente estudiante de Backend. Espero que hayas encontrado útil este código.
 
-Si tienes alguna pregunta, no dudes en contactarme por mis redes. 
+Si tienes alguna pregunta, no dudes en contactarme por mis redes 😊 
 
-¡Te agradezco mucho el interés! 😊 
-
-[![linkedin](https://img.shields.io/static/v1?label=&message=linkedin&color=0e76a8&logo=linkedin&logoColor=white&style=for-the-badge)](https://www.linkedin.com/in/jorgelina-mariano/)
-[![github](https://img.shields.io/static/v1?label=&message=github&color=171515&logo=github&logoColor=white&style=for-the-badge)](https://github.com/jormariano)
+[![linkedin](https://img.shields.io/static/v1?label=&message=linkedin&color=0e76a8&logo=linkedin&logoColor=white&style=for-the-badge)](https://www.linkedin.com/in/jorgelina-mariano/){:target="_blank"}
+[![github](https://img.shields.io/static/v1?label=&message=github&color=171515&logo=github&logoColor=white&style=for-the-badge)](https://github.com/jormariano){:target="_blank"}
 
 ## 📄 Licencia
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más información.
