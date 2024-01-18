@@ -1,7 +1,9 @@
 ![Imagen del proyecto](public/img/home1.png)
 
 # Landscapes Photography
-Este es un proyecto de ecommerce básico. La aplicación permite ver una lista de fotos obtenidas de https://www.pexels.com/es-es/ para simular su compra en línea. Los productos y las órdenes de compra se almacenan en Firebase.
+Este es un proyecto de ecommerce básico. La aplicación permite ver una lista de fotos para simular su compra en línea. Los productos y las órdenes de compra se almacenan en Firebase.
+
+*Las fotos fueron obtenidas de forma gratuita de [Pexels](https://www.pexels.com/es-es/).*
 
 ## Tecnologías utilizadas
 
@@ -48,8 +50,12 @@ Este es un proyecto de ecommerce básico. La aplicación permite ver una lista d
 
 Si tienes alguna pregunta, no dudes en contactarme por mis redes 😊 
 
-[![linkedin](https://img.shields.io/static/v1?label=&message=linkedin&color=0e76a8&logo=linkedin&logoColor=white&style=for-the-badge)](https://www.linkedin.com/in/jorgelina-mariano/){:target="_blank"}
-[![github](https://img.shields.io/static/v1?label=&message=github&color=171515&logo=github&logoColor=white&style=for-the-badge)](https://github.com/jormariano){:target="_blank"}
+<a href="https://www.linkedin.com/in/jorgelina-mariano/" target="_blank">
+  <img src="https://img.shields.io/static/v1?label=&message=linkedin&color=0e76a8&logo=linkedin&logoColor=white&style=for-the-badge" alt="linkedin">
+</a>
+<a href="https://github.com/jormariano" target="_blank">
+  <img src="https://img.shields.io/static/v1?label=&message=github&color=171515&logo=github&logoColor=white&style=for-the-badge" alt="linkedin">
+</a>
 
 ## 📄 Licencia
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más información.
